@@ -80,6 +80,11 @@ class ImageSlideshowState extends State<ImageSlideshow> {
   Timer? _timer;
 
   void _onPageChanged(int index) {
+    // when setting page from parent, don't call onPageChanged callback
+    if (widget.page != null && widget.page == index) {
+      return;
+    }
+    
     _currentPageNotifier.value = index;
     if (widget.onPageChanged != null) {
       final correctIndex = index % widget.children.length;
