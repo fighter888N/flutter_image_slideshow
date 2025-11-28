@@ -79,6 +79,8 @@ class ImageSlideshowState extends State<ImageSlideshow> {
   late final ScrollBehavior _scrollBehavior;
   Timer? _timer;
 
+  int get currentPage => _currentPageNotifier.value;
+
   void _onPageChanged(int index) {
     final correctIndex = index % widget.children.length;
     // when setting page from parent, don't call onPageChanged callback
