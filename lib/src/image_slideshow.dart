@@ -146,6 +146,16 @@ class ImageSlideshowState extends State<ImageSlideshow> {
   }
 
   @override
+  void didUpdateWidget(covariant ImageSlideshow oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.page != widget.page) {
+      if (widget.page != null) {
+        goToPage(widget.page!);
+      }
+    }
+  }
+
+  @override
   void dispose() {
     _pageController.dispose();
     _currentPageNotifier.dispose();
