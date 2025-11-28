@@ -80,8 +80,9 @@ class ImageSlideshowState extends State<ImageSlideshow> {
   Timer? _timer;
 
   void _onPageChanged(int index) {
+    final correctIndex = index % widget.children.length;
     // when setting page from parent, don't call onPageChanged callback
-    if (widget.page != null && widget.page == index) {
+    if (widget.page != null && widget.page == correctIndex) {
       return;
     }
     
