@@ -11,6 +11,7 @@ class ImageSlideshow extends StatefulWidget {
     this.width = double.infinity,
     this.height = 200,
     this.initialPage = 0,
+    this.page,
     this.indicatorColor,
     this.indicatorBackgroundColor = Colors.grey,
     this.onPageChanged,
@@ -35,6 +36,9 @@ class ImageSlideshow extends StatefulWidget {
 
   /// The page to show when first creating the [ImageSlideshow].
   final int initialPage;
+
+  /// The current page of the [ImageSlideshow].
+  final int? page;
 
   /// The color to paint the indicator.
   final Color? indicatorColor;
